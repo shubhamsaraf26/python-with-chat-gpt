@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Sanity - My Website{% endblock %}
+
+{% block content %}
+<div class="sanity-content">
+    <h1>Sanity Check</h1>
+    
+    <!-- Tab navigation -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'asdc')">ASDC</button>
+        <button class="tablinks" onclick="openTab(event, 'otf')">OTF</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="asdc" class="tabcontent">
+        <h2>Automated Sanity Dashboard Check (ASDC)</h2>
+        <p>
+            ASDC is a comprehensive suite of automated tests designed to validate the functionality and performance
+            of critical components in the e-commerce application. These tests are executed regularly to ensure
+            that the application meets the specified requirements and maintains high standards of quality.
+        </p>
+        <!-- Add more content for ASDC tab as needed -->
+    </div>
+
+    <div id="otf" class="tabcontent">
+        <h2>On-The-Fly (OTF) Testing</h2>
+        <p>
+            OTF testing involves ad-hoc testing of specific features or functionalities in the e-commerce application
+            to validate their behavior and performance in real-time. Unlike predefined test cases, OTF testing allows
+            testers to explore the application dynamically and identify potential issues or improvements on-the-fly.
+        </p>
+        <!-- Add more content for OTF tab as needed -->
+    </div>
+</div>
+
+<!-- JavaScript for tab functionality -->
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+{% endblock %}

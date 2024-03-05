@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Health Check - My Website{% endblock %}
+
+{% block content %}
+<div class="health-check-content">
+    <h1>Health Check</h1>
+    
+    <!-- Tab navigation -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'aabc')">AABC</button>
+        <button class="tablinks" onclick="openTab(event, 'xyz')">XYZ</button>
+        <button class="tablinks" onclick="openTab(event, 'aaa')">AAA</button>
+        <button class="tablinks" onclick="openTab(event, 'hhhh')">HHHH</button>
+        <button class="tablinks" onclick="openTab(event, 'kkkk')">KKKK</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="aabc" class="tabcontent">
+        <h2>AABC</h2>
+        <p>Content for AABC tab goes here.</p>
+    </div>
+
+    <div id="xyz" class="tabcontent">
+        <h2>XYZ</h2>
+        <p>Content for XYZ tab goes here.</p>
+    </div>
+
+    <div id="aaa" class="tabcontent">
+        <h2>AAA</h2>
+        <p>Content for AAA tab goes here.</p>
+    </div>
+
+    <div id="hhhh" class="tabcontent">
+        <h2>HHHH</h2>
+        <p>Content for HHHH tab goes here.</p>
+    </div>
+
+    <div id="kkkk" class="tabcontent">
+        <h2>KKKK</h2>
+        <p>Content for KKKK tab goes here.</p>
+    </div>
+</div>
+
+<!-- JavaScript for tab functionality -->
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+{% endblock %}
