@@ -2,7 +2,7 @@ import os
 from django.core.management import call_command
 
 # Step 1: Create a new Django project
-project_name = "mywebsite"
+project_name = "mywebsite1"
 call_command("startproject", project_name)
 
 # Step 2: Navigate into the project directory
